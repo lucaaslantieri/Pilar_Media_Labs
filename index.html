@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar Media Labs | Producción Integral</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <section id="hero">
+        <div class="main-logo-container">
+            <img src="IMG/logo_sin_fondo.png" alt="Pilar Media Labs Logo" class="main-logo-img">
+            <h1>PILAR MEDIA LABS</h1>
+            <p class="tagline">Producción Integral para Marcas Digitales</p>
+        </div>
+        
+        <a href="#servicios" class="btn-principal">Conoce Nuestros Servicios</a>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestras Soluciones</h2>
+        <div class="servicios-grid">
+            
+            <a class="servicio-tile web-design">
+                <h3>Diseño Web & Desarrollo</h3>
+                <p>Sitios elegantes y funcionales construidos sobre bases sólidas.</p>
+            </a>
+            
+            <a class="servicio-tile sound-prod">
+                <h3>Producción Sonora</h3>
+                <p>Diseño de audio de marca, podcasts y post-producción profesional.</p>
+            </a>
+            
+            <a class="servicio-tile media-edit">
+                <h3>Edición Multimedia</h3>
+                <p>Edición experta de foto y video para campañas de alto impacto.</p>
+            </a>
+
+            <a href="#contacto" class="servicio-tile cta-contact">
+                <h3>¡Empecemos tu Proyecto!</h3>
+                <p>Haz clic para agendar una consulta y definir tu estrategia.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="portafolio">
+        <h2>Portafolio Destacado</h2>
+        <p>Explora nuestros trabajos integrales por categoría de servicio.</p>
+        
+        <div class="portafolio-categorias-grid">
+            
+            <div class="portafolio-tile web-category" data-category="web-proyectos">
+                <h3>Diseño Web & Desarrollo</h3>
+                <p>Ver proyectos de sitios web y aplicaciones.</p>
+            </div>
+            
+            <div class="portafolio-tile sound-category" data-category="sound-proyectos">
+                <h3>Producción Sonora</h3>
+                <p>Ver proyectos de audio branding y podcasts.</p>
+            </div>
+            
+            <div class="portafolio-tile media-category" data-category="media-proyectos">
+                <h3>Edición Multimedia</h3>
+                <p>Ver proyectos de video y post-producción.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="proyectos-desplegables" class="hidden">
+        <h2 id="proyectos-titulo">Proyectos de [Categoría]</h2>
+        <button class="btn-secundario" id="btn-volver">← Volver a Categorías</button>
+        
+        <div class="proyectos-grid" id="proyectos-container">
+            </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Trabajemos Juntos</h2>
+        <p class="tagline">Cuéntanos sobre tu visión creativa y te ayudaremos a darle estructura.</p>
+        
+        <form id="contact-form" action="tu_endpoint_de_servidor" method="POST">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu Nombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="servicio">Servicio de Interés:</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="" disabled selected>Selecciona un servicio</option>
+                    <option value="web">Diseño Web & Desarrollo</option>
+                    <option value="sound">Producción Sonora</option>
+                    <option value="media">Edición Multimedia</option>
+                    <option value="integral">Solución Integral</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="mensaje">Tu Mensaje / Idea de Proyecto:</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe brevemente tu proyecto o consulta..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Enviar Propuesta</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pilar Media Labs. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                </div>
+        </div>
+    </div> 
+
+    <script src="JS/server.js"></script>
+</body>
+</html>
