@@ -1,13 +1,15 @@
-/* Variables de la Marca Pilar Media Labs */
 :root {
-    /* Colores Neón y Brillantez */
-    --color-principal: #00A6FF;     /* Azul Neón (Brillante) */
-    --color-secundario: #0A0A0A;    /* Negro Profundo (Fondo principal) */
-    --color-acento: #FF5733;       /* Naranja/Rojo Neón (CTA, Hover) */
-    --color-terciario: #B800F5;    /* Púrpura Neón (Gradientes) */
-    --color-fondo: #f4f4f9;        
-    --color-texto: #f4f4f9;        
+    --color-principal: #00A6FF;
+    --color-secundario: #0A0A0A;
+    --color-acento: #FF5733;
+    --color-terciario: #B800F5;
+    --color-fondo: #f4f4f9;
+    --color-texto: #f4f4f9;
+    --font-heading: 'Michroma', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -16,13 +18,34 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--color-texto);
     background-color: var(--color-secundario);
 }
 
-/* --- Estilos Generales de Secciones --- */
+header {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 166, 255, 0.2);
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-principal);
+    text-shadow: 0 0 8px var(--color-principal);
+}
+
 section {
     padding: 60px 5%;
     text-align: center;
@@ -32,26 +55,22 @@ section h2 {
     margin-bottom: 40px;
     font-size: 2rem;
     color: var(--color-principal);
-    /* Efecto Neón Suave en los Títulos */
     text-shadow: 0 0 5px rgba(0, 166, 255, 0.7);
+    font-family: var(--font-heading);
 }
 
-/* --- Animación de Fondo (Keyframes) --- */
 @keyframes neon-bg-shift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* --- SECCIÓN HERO (El Cartel Principal y Animado) --- */
 #hero {
-    /* Fondo animado */
     background: linear-gradient(-45deg, var(--color-secundario), var(--color-principal), var(--color-terciario), var(--color-secundario));
-    background-size: 400% 400%; 
-    animation: neon-bg-shift 20s ease infinite; 
-
+    background-size: 400% 400%;
+    animation: neon-bg-shift 20s ease infinite;
     color: white;
-    padding: 100px 5% 100px; 
+    padding: 100px 5% 100px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -60,51 +79,48 @@ section h2 {
     min-height: 100vh;
 }
 
-/* Contenedor del Logo y Título */
 .main-logo-container {
     margin-bottom: 50px;
 }
 
-/* --- LOGO GRANDE (El Icono) --- */
 .main-logo-img {
-    height: 300px; /* Tamaño grande que solicitaste */
+    height: 300px;
     width: auto;
-    /* Filtro para efecto neón */
-    filter: drop-shadow(0px 0px 15px var(--color-principal)) brightness(1.2); 
+    filter: drop-shadow(0px 0px 15px var(--color-principal)) brightness(1.2);
     margin-bottom: 20px;
 }
 
-/* --- TÍTULO PRINCIPAL (El Nombre de la Marca) --- */
 #hero h1 {
-    font-size: 4.5rem; 
+    font-size: 4.5rem;
     margin-bottom: 10px;
-    color: white; 
-    /* Efecto neón muy fuerte */
+    color: white;
     text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px var(--color-principal), 0 0 45px var(--color-terciario);
-    letter-spacing: 5px; 
+    letter-spacing: 5px;
+    font-family: var(--font-heading);
+    transition: text-shadow 0.5s ease;
 }
 
-/* Tagline */
+#hero h1:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px var(--color-principal), 0 0 60px var(--color-terciario);
+}
+
 .tagline {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-
-/* --- BOTÓN PRINCIPAL (CTA) --- */
 .btn-principal {
     display: inline-block;
-    background: var(--color-acento); 
-    color: var(--color-secundario); 
-    padding: 15px 35px; 
+    background: var(--color-acento);
+    color: var(--color-secundario);
+    padding: 15px 35px;
     margin-top: 50px;
     text-decoration: none;
     border-radius: 8px;
     transition: background 0.3s, box-shadow 0.3s;
     font-weight: bold;
     font-size: 1.2rem;
-    /* Efecto neón en el botón */
     box-shadow: 0 0 10px var(--color-acento);
 }
 
@@ -114,8 +130,6 @@ section h2 {
     box-shadow: 0 0 20px var(--color-principal);
 }
 
-
-/* --- SECCIÓN SERVICIOS (Diseño de Tiles con Transiciones y Neón) --- */
 .servicios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -123,67 +137,147 @@ section h2 {
     margin-top: 40px;
 }
 
-/* Estilo Base del Tile */
 .servicio-tile {
-    display: block; 
+    display: block;
     text-align: left;
-    text-decoration: none; 
-    color: white; 
-    
+    text-decoration: none;
+    color: white;
     padding: 30px;
     border-radius: 12px;
     min-height: 200px;
-    
-    /* Transición general para el hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    background: var(--color-secundario); 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    background: var(--color-secundario);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .servicio-tile h3 {
     margin-bottom: 10px;
     font-size: 1.5rem;
     color: white;
+    font-family: var(--font-heading);
 }
 
-/* Efecto Hover: se levanta y añade brillo neón */
 .servicio-tile:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 0 20px var(--color-acento); /* Efecto neón al pasar el mouse */
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px var(--color-acento);
 }
 
-/* Colores específicos para cada Tile (Gradientes DIFUMINADOS y Neón) */
 .web-design {
-    background: linear-gradient(135deg, var(--color-principal), var(--color-terciario)); 
+    background: linear-gradient(135deg, var(--color-principal), var(--color-terciario));
 }
 
 .sound-prod {
-    background: linear-gradient(135deg, var(--color-secundario), rgba(184, 0, 245, 0.6)); 
+    background: linear-gradient(135deg, var(--color-secundario), rgba(184, 0, 245, 0.6));
 }
 
 .media-edit {
-    background: linear-gradient(135deg, var(--color-acento), #E63946); 
+    background: linear-gradient(135deg, var(--color-acento), #E63946);
 }
 
 .cta-contact {
     background: linear-gradient(135deg, var(--color-secundario), var(--color-principal));
-    color: white; 
+    color: white;
 }
 
 .cta-contact h3 {
-    color: white; 
+    color: white;
 }
 
-/* --- SECCIÓN CONTACTO y FOOTER --- */
 #contacto {
-    background: var(--color-terciario); 
+    background: var(--color-terciario);
     color: white;
+    padding-bottom: 80px;
 }
 
 #contacto h2 {
     color: white;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+#contacto .tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+}
+
+#calendly-widget-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 166, 255, 0.5);
+    overflow: hidden;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(184, 0, 245, 0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-principal);
+    border-radius: 6px;
+    background: var(--color-secundario);
+    color: white;
+    font-size: 1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    outline: none;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 10px var(--color-acento);
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--color-acento);
+    color: var(--color-secundario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px var(--color-acento);
+    margin-top: 30px;
+}
+
+.btn-submit:hover {
+    background: var(--color-principal);
+    color: white;
+    box-shadow: 0 0 15px var(--color-principal);
 }
 
 footer {
@@ -192,14 +286,13 @@ footer {
     background: var(--color-secundario);
     color: #ccc;
     font-size: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hidden {
     display: none !important;
 }
 
-/* Diseño del Grid de Categorías y Proyectos */
 .portafolio-categorias-grid, .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -207,25 +300,52 @@ footer {
     margin-top: 40px;
 }
 
-/* Estilo Base del Tile de Categoría (similar al de servicios) */
 .portafolio-tile {
-    /* Mismos efectos de transición */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    padding: 30px;
+    padding: 0;
     border-radius: 12px;
     background: var(--color-secundario);
     color: white;
     text-align: left;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .portafolio-tile:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 0 20px var(--color-principal); /* Brillo primario al hacer hover */
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px var(--color-principal);
 }
 
-/* Estilos de los Tiles de Proyectos (Miniaturas) */
+.tile-miniatura {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.5), transparent);
+}
+
+.tile-miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portafolio-tile:hover .tile-miniatura img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.tile-contenido {
+    padding: 20px 20px 15px;
+}
+
+.portafolio-tile h3 {
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+}
+
 .proyecto-item {
     cursor: pointer;
     overflow: hidden;
@@ -236,8 +356,8 @@ footer {
 }
 
 .proyecto-item:hover {
-    transform: scale(1.05); /* Zoom al pasar el mouse */
-    box-shadow: 0 0 25px var(--color-acento); /* Brillo acento al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--color-acento);
 }
 
 .proyecto-item img {
@@ -252,33 +372,57 @@ footer {
     font-size: 1.1rem;
 }
 
-/* --- ESTILOS DEL MODAL (Ventana Emergente) --- */
+.precios-category {
+    background: linear-gradient(135deg, var(--color-acento), #E63946);
+    text-decoration: none;
+}
+
+.precios-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px var(--color-acento);
+}
+
+.precios-category .tile-miniatura img {
+    filter: drop-shadow(0 0 5px var(--color-principal));
+}
+
+.tile-disabled {
+    opacity: 0.4;
+    cursor: default;
+    filter: grayscale(80%);
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.tile-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.4;
+    cursor: default;
+}
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; /* Asegura que esté por encima de todo */
+    display: none;
+    position: fixed;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    /* Fondo oscuro y difuminado */
-    background-color: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(10px); 
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
 }
 
 .modal-content {
     background-color: var(--color-secundario);
-    margin: 5% auto; /* Centrar verticalmente y añadir margen */
+    margin: 5% auto;
     padding: 30px;
     border-radius: 15px;
-    width: 80%; /* Ancho del modal */
+    width: 80%;
     max-width: 900px;
     position: relative;
-    box-shadow: 0 0 40px var(--color-principal); /* Brillo neón alrededor del modal */
-    
-    /* ANIMACIÓN DE ENTRADA */
+    box-shadow: 0 0 40px var(--color-principal);
     animation-name: modal-slide-in;
     animation-duration: 0.5s;
 }
@@ -335,84 +479,12 @@ footer {
     box-shadow: 0 0 10px var(--color-principal);
 }
 
-#contacto {
-    /* El fondo ya está definido como --color-terciario (Púrpura Neón) */
-    padding-bottom: 80px;
-}
-
-#contacto .tagline {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 50px;
-}
-
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 30px;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semi-transparente sobre el púrpura */
-    box-shadow: 0 0 20px rgba(184, 0, 245, 0.5); /* Sombra púrpura para el efecto neón */
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form select,
-#contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid var(--color-principal); /* Borde Azul Neón */
-    border-radius: 6px;
-    background: var(--color-secundario); /* Fondo oscuro para los campos */
-    color: white;
-    font-size: 1rem;
-    transition: box-shadow 0.3s, border-color 0.3s;
-    /* Eliminar el resplandor de enfoque predeterminado */
-    outline: none; 
-}
-
-#contact-form input:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
-    border-color: var(--color-acento); /* Borde cambia a Naranja/Rojo Neón al enfocar */
-    box-shadow: 0 0 10px var(--color-acento); /* Sombra neón al enfocar */
-}
-
-#contact-form textarea {
-    resize: vertical;
-}
-
-.btn-submit {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background: var(--color-acento); /* Naranja Neón */
-    color: var(--color-secundario);
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 10px var(--color-acento);
-    margin-top: 30px;
-}
-
-.btn-submit:hover {
-    background: var(--color-principal); /* Azul Neón al pasar el mouse */
-    color: white;
-    box-shadow: 0 0 15px var(--color-principal);
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+        letter-spacing: 3px;
+    }
+    .main-logo-img {
+        height: 200px;
+    }
 }

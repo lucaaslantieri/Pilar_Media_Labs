@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilar Media Labs | Producción Integral</title>
+    <link rel="icon" href="IMG/favicon.png" type="image/png">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
@@ -51,65 +52,42 @@
         <div class="portafolio-categorias-grid">
             
             <div class="portafolio-tile web-category" data-category="web-proyectos">
-                <h3>Diseño Web & Desarrollo</h3>
-                <p>Ver proyectos de sitios web y aplicaciones.</p>
+                <div class="tile-miniatura">
+                    <img src="IMG/design_development.png" alt="Miniatura Web Design"> 
+                </div>
+                <div class="tile-contenido">
+                    <h3>Diseño Web & Desarrollo</h3>
+                    <p>Ver proyectos de sitios web y aplicaciones.</p>
+                </div>
             </div>
             
             <div class="portafolio-tile sound-category" data-category="sound-proyectos">
-                <h3>Producción Sonora</h3>
-                <p>Ver proyectos de audio branding y podcasts.</p>
+                 <div class="tile-miniatura">
+                    <img src="IMG/audio_mixing.png" alt="Miniatura Producción Sonora"> 
+                </div>
+                <div class="tile-contenido">
+                    <h3>Producción Sonora</h3>
+                    <p>Ver proyectos de audio branding y podcasts.</p>
+                </div>
             </div>
             
             <div class="portafolio-tile media-category" data-category="media-proyectos">
-                <h3>Edición Multimedia</h3>
-                <p>Ver proyectos de video y post-producción.</p>
+                 <div class="tile-miniatura">
+                    <img src="IMG/video_Editing.png" alt="Miniatura Edición Multimedia"> 
+                </div>
+                <div class="tile-contenido">
+                    <h3>Edición Multimedia</h3>
+                    <p>Ver proyectos de video y post-producción.</p>
+                </div>
             </div>
 
         </div>
     </section>
-
-    <section id="proyectos-desplegables" class="hidden">
-        <h2 id="proyectos-titulo">Proyectos de [Categoría]</h2>
-        <button class="btn-secundario" id="btn-volver">← Volver a Categorías</button>
-        
-        <div class="proyectos-grid" id="proyectos-container">
-            </div>
-    </section>
     
     <section id="contacto">
         <h2>Trabajemos Juntos</h2>
-        <p class="tagline">Cuéntanos sobre tu visión creativa y te ayudaremos a darle estructura.</p>
-        
-        <form id="contact-form" action="tu_endpoint_de_servidor" method="POST">
-            
-            <div class="form-group">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Tu Nombre">
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="tu@email.com">
-            </div>
-            
-            <div class="form-group">
-                <label for="servicio">Servicio de Interés:</label>
-                <select id="servicio" name="servicio" required>
-                    <option value="" disabled selected>Selecciona un servicio</option>
-                    <option value="web">Diseño Web & Desarrollo</option>
-                    <option value="sound">Producción Sonora</option>
-                    <option value="media">Edición Multimedia</option>
-                    <option value="integral">Solución Integral</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="mensaje">Tu Mensaje / Idea de Proyecto:</label>
-                <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe brevemente tu proyecto o consulta..."></textarea>
-            </div>
-            
-            <button type="submit" class="btn-submit">Enviar Propuesta</button>
-        </form>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/lucaslantieri24/30min?text_color=ad0181&primary_color=0048a0" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </section>
 
     <footer>
@@ -123,7 +101,6 @@
                 </div>
         </div>
     </div> 
-
     <script src="JS/server.js"></script>
 </body>
 </html>
